@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+</head>
+<body>
+    <h1>Employee Registration</h1>
+
+    <form action="{{ url_for('employee_registration') }}" method="post">
+        <label for="employee_name">Your Name:</label>
+        <input type="text" name="employee_name" required>
+        <br>
+        <label for="employee_email">Your Email:</label>
+        <input type="email" name="employee_email" required>
+        <br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+

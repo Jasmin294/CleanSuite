@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+</head>
+<body>
+    <h1>Customer Login</h1>
+
+    <form action="{{ url_for('customer_login') }}" method="post">
+        <label for="customer_username">Username (Email):</label>
+        <input type="email" name="customer_username" required>
+        <br>
+        <label for="customer_password">Password:</label>
+        <input type="password" name="customer_password" required>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+
+
+    <p>Don't have an account? <a href="{{ url_for('customer_registration') }}">Create Account</a>.</p>
+
+</body>
+</html>

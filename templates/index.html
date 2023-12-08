@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperial Cleaning - Client Request Form</title>
+</head>
+<body>
+    <h1>Imperial Cleaning - Client Request Form</h1>
+    <form action="{{ url_for('submit_request') }}" method="post">
+        <label for="client_name">Your Name:</label>
+        <input type="text" name="client_name" required>
+        <br>
+        <label for="cleaning_preferences">Cleaning Preferences:</label>
+        <textarea name="cleaning_preferences" required></textarea>
+        <br>
+        <input type="submit" value="Submit Request">
+    </form>
+</body>
+</html>

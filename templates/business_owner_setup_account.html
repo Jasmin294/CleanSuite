@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Business Owner Account</title>
+</head>
+<body>
+    <h1>Setup Business Owner Account</h1>
+
+    <form action="{{ url_for('business_owner_setup_account') }}" method="post">
+        <label for="business_owner_first_name">First Name:</label>
+        <input type="text" name="business_owner_first_name" required>
+        <br>
+        <label for="business_owner_last_name">Last Name:</label>
+        <input type="text" name="business_owner_last_name" required>
+        <br>
+        <label for="business_account_type">Choose Business Account Type:</label>
+        <select name="business_account_type" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+        </select>
+        <br>
+        <input type="submit" value="Setup Account">
+    </form>
+</body>
+</html>

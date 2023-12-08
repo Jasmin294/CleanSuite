@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Owner Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}!</h1>
+
+    <!-- Add content specific to the business owner's dashboard -->
+    <p>Your business-related information and features go here.</p>
+
+    <!-- Add other relevant content and features as needed -->
+
+    <!-- Logout link -->
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

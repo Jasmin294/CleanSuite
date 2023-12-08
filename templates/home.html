@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperial ProClean</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Imperial Cleaning</title>
+</head>
+<body>
+    <h1>Welcome to Imperial ProClean</h1>
+
+    <form action="{{ url_for('login') }}" method="post">
+        <label for="user_type">Select who you are:</label>
+        <select name="user_type" required>
+            <option value="business_owner">Business Owner</option>
+            <option value="employee">Employee</option>
+            <option value="customer">Customer</option>
+        </select>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
