@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Premium Account</title>
+    <style>
+        body {
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #d9534f;
+        }
+
+        h2 {
+            color: #d9534f;
+        }
+
+        h3 {
+            color: #d9534f;
+        }
+
+        p {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #d9534f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ user.first_name }} {{ user.last_name }}!</h1>
+        <h2>Account Information:</h2>
+        <p>Username: {{ user.username }}</p>
+        <p>Business Account Type: {{ user.business_account_type }}</p>
+
+        <h2>Premium Account Functionalities:</h2>
+        <h3>Employee List:</h3>
+        <ul>
+            {% for employee, status, location in employees_list %}
+                <li>{{ employee }} - {{ status }} - Location: {{ location }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Booking Requests:</h3>
+        <ul>
+            {% for customer in booking_requests_list %}
+                <li>{{ customer }} - <a href="{{ url_for('process_booking_request', customer_username=customer, action='accept') }}">Accept</a> | <a href="{{ url_for('process_booking_request', customer_username=customer, action='deny') }}">Deny</a></li>
+            {% endfor %}
+        </ul>
+
+        <h3>Employee Account Requests:</h3>
+        <ul>
+            {% for employee_request in employee_requests_list %}
+                <li>{{ employee_request }} - <a href="{{ url_for('process_employee_request', employee_username=employee_request, action='accept') }}">Accept</a> | <a href="{{ url_for('process_employee_request', employee_username=employee_request, action='deny') }}">Deny</a></li>
+            {% endfor %}
+        </ul>
+
+        <!-- Additional information or functionalities can be added here -->
+
+
+        <button onclick="window.location.href='{{ url_for('business_owner_setup_account') }}'">Setup Account</button>
+        <button onclick="window.location.href='{{ url_for('employee_registration') }}'">View Reports</button>
+        <button onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+    </div>
+</body>
+</html>

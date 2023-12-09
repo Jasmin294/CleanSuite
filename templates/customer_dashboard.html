@@ -2,14 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Dashboard</title>
+    <style>
+        body {
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #d9534f;
+        }
+
+        p {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #d9534f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Customer Dashboard</h1>
+    <div class="container">
+        <h1>Welcome to the Customer Dashboard</h1>
 
-    <!-- Add your customer dashboard content here -->
+        <h2>Booking Section:</h2>
+        <ul>
+            <li><a href="{{ url_for('book', time='8am') }}">8:00 AM</a></li>
+            <li><a href="{{ url_for('book', time='11am') }}">11:00 AM</a></li>
+            <li><a href="{{ url_for('book', time='2pm') }}">2:00 PM</a></li>
+            <li><a href="{{ url_for('book', time='5pm') }}">5:00 PM</a></li>
+        </ul>
 
-    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+
+        <button onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+    </div>
 </body>
 </html>
